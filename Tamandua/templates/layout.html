@@ -12,16 +12,15 @@
 
         <link rel= "stylesheet" type="text/css" href="{{ url_for('static',filename='index.css') }}" />
         <script type="text/javascript" href="{{ url_for('static',filename='index.js') }}" /></script>
-
-
         
     </head>
 
     <body>
 
-        {% include 'includes/_navbar.html' %}
+      
 
-        <main role="main" class="container">
+        {% include 'includes/_navbar.html' %}
+        <main role="main pideos" class="container">
           <div class="row">
             <div class="col-md-8">
               {% with messages = get_flashed_messages(with_categories=true) %}
@@ -36,8 +35,8 @@
               {% block content %}{% endblock %}
             </div>            
           </div>
+          
         </main>
-
 
     
 
