@@ -5,9 +5,43 @@
   font-weight: bold;
 }
 
+.form-signin {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    margin: auto;    
+    position: absolute;
+    right: 0px;
+    top: 50px;
+}
+
+
+.img-login {
+  width: 35%;
+  position: absolute;
+  right: 50px;
+  top: 0px;
+
+}
+
+.img-login-setpw {
+  width: 35%;
+  position: absolute;
+  right: 30px;
+  top: 0px;
+
+}
+
+.img-login-settoken {
+  width: 35%;
+  position: absolute;
+  right: 30px;
+  top: 0px;
+
+}
 
 .logo-tamandua {
-  width: 7%;
+  width: 50%;
 }
 
 

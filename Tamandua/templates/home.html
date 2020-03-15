@@ -1,0 +1,24 @@
+ {% extends 'layout.html' %}
+
+ {% block content %}
+
+ 	{% for post in posts %}
+ 		<aricle class="media content-section" align="center">
+ 			<div class="media-body">
+ 				<div class="article-metadata">
+ 					<a class="mr-2" href="#"> {{ post.author.username }}</a>
+ 					<small class="text-muted"> {{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+ 					<h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}"> {{ post.title }}</a></h2>
+
+
+
+ 					 <iframe width="560" height="315" src="{{post.content}} " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 					</div>
+ 				</div>
+ 			</aricle>
+
+
+ 	{% endfor %}
+
+
+ {% endblock content %}

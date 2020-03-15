@@ -5,7 +5,7 @@
 
   <div class="collapse navbar-collapse  justify-content-md-center" id="navbarsExample08">
     <ul class="navbar-nav ">
-      <img class="logo-tamandua" src="/static/tamandua.png"></a> 
+      <img class="logo-tamandua" src="/static/tamandua.jpeg"></a> 
       <li class="nav-item active">
         <li class="nav-item dropdown">
           <div class="dropdown">
@@ -18,7 +18,7 @@
           </div>  
         </li>     
       <li class="nav-item boton">
-        <a class="nav-link" href="#"><button type="button" class="btn btn-info">Aula Virtual</button></a>
+        <a class="nav-link" href="{{url_for('home')}}"><button type="button" class="btn btn-info">Aula Virtual</button></a>
       </li>  
       <li class="nav-item boton">
         <a class="nav-link" href="#"> <button type="button" class="btn btn-info">Foro</button></a>
@@ -32,13 +32,26 @@
       <li class="nav-item boton">
         <a class="nav-link" href="#"><button type="button" class="btn btn-info">Contacto</button></a>
       </li> 
-      <li class="nav-item boton">
-        <a class="nav-link" href=" {{url_for('register')}} "><button type="button" class="btn btn-info">Registrarse</button></a>
-      </li> 
-      <li class="nav-item boton">
-        <a class="nav-link" href="{{url_for('login')}} "><button type="button" class="btn btn-info">Iniciar Sesion</button></a>
-      </li> 
+        {% if current_user.is_authenticated %}
+            <li class="nav-item boton">
+              <a class="nav-link" href="{{url_for('new_post')}} "><button type="button" class="btn btn-info">Nuevo Video</button></a>
+            </li> 
+            <li class="nav-item boton">
+              <a class="nav-link" href="{{url_for('logout')}} "><button type="button" class="btn btn-info">Cerrar Sesion</button></a>
+            </li> 
+            <li class="nav-item boton">
+              <a class="nav-link" href="{{url_for('account')}} "><button type="button" class="btn btn-info">Mi cuenta</button></a>
+            </li> 
+        {% else %}
+            <li class="nav-item boton">
+              <a class="nav-link" href=" {{url_for('register')}} "><button type="button" class="btn btn-info">Registrarse</button></a>
+            </li> 
+            <li class="nav-item boton">
+              <a class="nav-link" href="{{url_for('login')}} "><button type="button" class="btn btn-info">Iniciar Sesion</button></a>
+            </li> 
+        {% endif %}
        
     </ul>
+      
   </div>
 </nav>
