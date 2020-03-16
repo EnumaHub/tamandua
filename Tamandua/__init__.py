@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
+from Tamandua.errors.handlers import errors
 
 
 
@@ -22,5 +23,6 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USERNAME'] = 'tamandua.bit@gmail.com'
 app.config['MAIL_PASSWORD'] = 'Tamandua123'
 mail = Mail(app)
+app.register_blueprint(errors)
 
 from Tamandua import routes

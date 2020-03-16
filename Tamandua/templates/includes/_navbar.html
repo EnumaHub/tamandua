@@ -28,7 +28,7 @@
         document.getElementById("mySidenav").style.width = "0";
       }
       </script>
-      <img class="logo-tamandua" src="/static/tamandua.jpeg"/> 
+      <a  href="{{ url_for('home') }}"><img class="logo-tamandua" src="/static/tamandua.jpeg"/> </a>
       <li class="nav-item active">
         <li class="nav-item dropdown">
           <div class="dropdown">
@@ -53,12 +53,12 @@
         {% if current_user.is_authenticated %}
             <li class="nav-item boton">
               <a class="nav-link" href="{{url_for('new_post')}} "><button type="button" class="btn btn-info">Nuevo Video</button></a>
+            </li>             
+            <li class="nav-item boton">
+              <a class="nav-link" href="{{url_for('account')}} "><button type="button" class="btn btn-info">Mi cuenta</button></a>
             </li> 
             <li class="nav-item boton">
               <a class="nav-link" href="{{url_for('logout')}} "><button type="button" class="btn btn-info">Cerrar Sesion</button></a>
-            </li> 
-            <li class="nav-item boton">
-              <a class="nav-link" href="{{url_for('account')}} "><button type="button" class="btn btn-info">Mi cuenta</button></a>
             </li> 
         {% else %}
             <li class="nav-item boton">
